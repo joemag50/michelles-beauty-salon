@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BeautySalon</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    <%= render 'layouts/navbar' %>
+
+    <%- if alert %>
+      <div class="container mt-5 alert alert-danger alert-dismissible fade show" role="alert">
+        <p class="alert"><%= alert %></p>
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <%- end %>
+
+    <%- if notice %>
+      <div class="container mt-5 alert alert-info alert-dismissible fade show" role="alert">
+        <p class="notice"><%= notice %></p>
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <%- end %>
+    <%= yield %>
+  </body>
+</html>
