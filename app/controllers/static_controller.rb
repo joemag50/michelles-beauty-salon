@@ -6,5 +6,6 @@ class StaticController < ApplicationController
   end
 
   def app
+    @appointments = Appointment.all
   end
 end

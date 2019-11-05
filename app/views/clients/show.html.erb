@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row mt-5 mb-5">
+    <div class="col-12">
+
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <strong>Name:</strong>
+        <%= @client.name %>
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <%= @client.phone %>
+      </p>
+
+      <%= link_to 'Edit', edit_client_path(@client) %> |
+      <%= link_to 'Back', clients_path %>
+    </div>
+  </div>
+</div>

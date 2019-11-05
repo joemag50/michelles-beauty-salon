@@ -2,14 +2,54 @@
   <div class="row mt-5 mb-5">
     <div class="col-4">
 
-      <h1>Menu app</h1>
+      <h1>Menu</h1>
 
     </div>
   </div>
 
   <div class="row mt-5 mb-5">
-    <div class="col-4">
-      <%= link_to 'Inventarios', articles_path, class: 'btn btn-info btn-pink' %>      
+    <div class="col-2">
+
+      <div class="card">
+        <div class="card-header">
+          Opciones
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <%= link_to 'Inventarios', articles_path %>      
+          </li>
+          <li class="list-group-item">
+            <%= link_to 'Citas', appointments_path %>      
+          </li>
+          <li class="list-group-item">
+            <%= link_to 'Clientes', clients_path %>      
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-10">
+      <h1>Appointments</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>Start</th>
+            <th>User</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @appointments.each do |appointment| %>
+            <tr>
+              <td><%= appointment.client.name %></td>
+              <td><%= appointment.start %></td>
+              <td><%= appointment.user.email %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

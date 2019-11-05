@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row mt-5 mb-5">
+    <div class="col-12">
+
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <strong>Client:</strong>
+        <%= @appointment.client.name %>
+      </p>
+
+      <p>
+        <strong>Start:</strong>
+        <%= @appointment.start %>
+      </p>
+
+      <p>
+        <strong>User:</strong>
+        <%= @appointment.user.email %>
+      </p>
+
+      <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+      <%= link_to 'Back', appointments_path %>
+    </div>
+  </div>
+</div>
