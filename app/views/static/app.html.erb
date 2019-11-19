@@ -37,6 +37,7 @@
             <th>Client</th>
             <th>Start</th>
             <th>User</th>
+            <th>Done</th>
           </tr>
         </thead>
 
@@ -46,6 +47,11 @@
               <td><%= appointment.client.name %></td>
               <td><%= appointment.start %></td>
               <td><%= appointment.user.email %></td>
+              <% if appointment.done %>
+                <td></td>
+              <% else %>
+                <td><%= link_to 'Finish', appointment_path(appointment.id), method: :delete %></td>
+              <% end %>
             </tr>
           <% end %>
         </tbody>
